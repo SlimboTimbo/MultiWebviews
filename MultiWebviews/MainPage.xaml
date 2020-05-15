@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:custom="clr-namespace:MultiWebviews.Controls"
+             mc:Ignorable="d"
+             x:Class="MultiWebviews.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+
+            <Label Text="Testing multi webviews" BackgroundColor="Pink" HorizontalOptions="FillAndExpand" HeightRequest="50" />
+
+            <custom:HybridWebView messageContent="1" />
+            <custom:HybridWebView messageContent="2" />
+            <custom:HybridWebView messageContent="3" />
+            <custom:HybridWebView messageContent="4" />
+            <custom:HybridWebView messageContent="5" />
+            <custom:HybridWebView messageContent="6" />
+
+        </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>
