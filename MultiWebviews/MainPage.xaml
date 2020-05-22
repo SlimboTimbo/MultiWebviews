@@ -6,20 +6,22 @@
              mc:Ignorable="d"
              x:Class="MultiWebviews.MainPage">
 
-    <ScrollView>
-        <StackLayout>
-
-            <Label Text="Testing multi webviews" BackgroundColor="Pink" HorizontalOptions="FillAndExpand" HeightRequest="50" />
-
-            <custom:HybridWebView messageContent="1" />
-            <custom:HybridWebView messageContent="2" />
-            <custom:HybridWebView messageContent="3" />
-            <custom:HybridWebView messageContent="4" />
-            <custom:HybridWebView messageContent="5" />
-            <custom:HybridWebView messageContent="6" />
-
-        </StackLayout>
-    </ScrollView>
+ 
+        
+        <ListView x:Name="lstView" HasUnevenRows="True" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <custom:HybridWebView Grid.Row="1" messageContent="{ Binding Name}" />
+                    </Grid>
+                </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
 
 </ContentPage>

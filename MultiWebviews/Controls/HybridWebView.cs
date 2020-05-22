@@ -40,7 +40,6 @@ namespace MultiWebviews.Controls
         public HybridWebView()
         {
 
-            HeightRequest = 20;
             Source = "";
             this.PropertyChanged += HybridWebView_PropertyChanged;
 
@@ -51,7 +50,6 @@ namespace MultiWebviews.Controls
 
             if (e.PropertyName.Equals(nameof(messageContent)))
             {
-
                 var htmlSource = new HtmlWebViewSource();
                 htmlSource.Html = @"<html>
                                     <head>
@@ -59,14 +57,12 @@ namespace MultiWebviews.Controls
                                     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>
                                     </head>
                                     <body style=""background-color: #DDDDDD;"">
-<a class=""btn btn-true"" onclick=""setresponseandsubmit('1ca15124-9624-431e-8644-22a5839b7a10')"">test: </a>" + messageContent + " <p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p>" +
-      "</body></html>";
-
+                                        <a class=""btn btn-true"" onclick=""setresponseandsubmit('1ca15124-9624-431e-8644-22a5839b7a10')"">test: </a>"
+                                        + messageContent + 
+                                        "<p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p>" +
+                                    "</body></html>";
                 Source = htmlSource;
-
             }
-
         }
     }
-
 }
