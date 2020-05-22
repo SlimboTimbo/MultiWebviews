@@ -43,6 +43,24 @@ namespace MultiWebviews.Controls
             Source = "";
             this.PropertyChanged += HybridWebView_PropertyChanged;
 
+            MessagingCenter.Subscribe<Object, double>(this, "LoadFinished", (args, height) =>
+            {
+
+                var parent = this.Parent;
+                while (parent != null && !(parent is ViewCell))
+                {
+                    parent = parent.Parent;
+                }
+                if (parent is ViewCell cell)
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        this.HeightRequest = height;
+                        cell.ForceUpdateSize();
+                    });
+                }
+            });
+
         }
 
         private void HybridWebView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -59,7 +77,6 @@ namespace MultiWebviews.Controls
                                     <body style=""background-color: #DDDDDD;"">
                                         <a class=""btn btn-true"" onclick=""setresponseandsubmit('1ca15124-9624-431e-8644-22a5839b7a10')"">test: </a>"
                                         + messageContent + 
-                                        "<p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p><p>Extra line</p>" +
                                     "</body></html>";
                 Source = htmlSource;
             }

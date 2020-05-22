@@ -6,10 +6,6 @@
              mc:Ignorable="d"
              x:Class="MultiWebviews.MainPage">
 
-
-
-
-
     <ListView x:Name="lstView" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -28,8 +24,5 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
-
-
 
 </ContentPage>

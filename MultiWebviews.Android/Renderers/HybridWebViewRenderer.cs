@@ -51,6 +51,8 @@ namespace MultiWebviews.Droid.Renderers
                         await Task.Delay(100);
                         string result = await _xwebView.EvaluateJavaScriptAsync("(function(){return document.body.scrollHeight;})()");
                         _xwebView.HeightRequest = Convert.ToDouble(result);
+
+                        MessagingCenter.Send<Object, double>(this, "LoadFinished", Convert.ToDouble(result));
                     }
                     base.OnPageFinished(view, url);
                 }

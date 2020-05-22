@@ -27,14 +27,11 @@ namespace MultiWebviews
 
             pages = new ObservableCollection<PageViewModel>();
                 pages.Add(new PageViewModel{ Name="Test 1" });
-                pages.Add(new PageViewModel{ Name= "Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 " });
+                pages.Add(new PageViewModel{ Name= "Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 " });
                 pages.Add(new PageViewModel{ Name="Test 3" });
                 pages.Add(new PageViewModel { Name = "Test 4 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 Test 2 " });
 
             lstView.ItemsSource = pages;
-
-
-            // this.BindingContext = new[] { "Marc Williams", "Ridder Rivera", "Jose Ganatti" };
         }
     }
 }
