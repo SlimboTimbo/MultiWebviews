@@ -6,22 +6,30 @@
              mc:Ignorable="d"
              x:Class="MultiWebviews.MainPage">
 
- 
-        
-        <ListView x:Name="lstView" HasUnevenRows="True" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
+
+
+
+
+    <ListView x:Name="lstView" HasUnevenRows="True" VerticalOptions="FillAndExpand" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
                 <ViewCell>
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Text="Test:" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
                         <custom:HybridWebView Grid.Row="1" messageContent="{ Binding Name}" />
+
                     </Grid>
                 </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
 
 
 </ContentPage>
